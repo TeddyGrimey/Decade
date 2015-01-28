@@ -11,7 +11,6 @@ public class zoom : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		camera.orthographicSize += 0.001f;
-		print (10);
 		print (20);
 	}
 }
