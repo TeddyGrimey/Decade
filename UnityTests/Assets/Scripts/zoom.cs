@@ -12,5 +12,6 @@ public class zoom : MonoBehaviour {
 	void Update () {
 		camera.orthographicSize += 0.001f;
 		print (10);
+		print (20);
 	}
 }
