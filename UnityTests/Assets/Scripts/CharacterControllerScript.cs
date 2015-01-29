@@ -18,6 +18,8 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		moveDirection = Vector3.zero;
+
 		Vector3 direction = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 		float angleRads = this.transform.rotation.eulerAngles.y * Mathf.PI / 180;
 		Quaternion currentRotation = Quaternion.LookRotation(Vector3.up, direction);
@@ -30,8 +32,8 @@ public class CharacterControllerScript : MonoBehaviour {
 
 		moveDirection.y = -gravity;
 
-		moveDirection *= Time.deltaTime * speed;
 
+		moveDirection *= Time.deltaTime * speed;
 
 		controller.Move(moveDirection);
 
