@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Editors\NodeEditor.cs">
     <Files>
-      <File FileName="..\..\..\..\Google Drive\Frognal Court\Decades Project\UnityTests\Assets\Scripts\CharacterControllerScript.cs" Line="33" Column="16" />
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="19" />
+      <File FileName="Assets\Scripts\AI\Node.cs" Line="13" Column="30" />
+      <File FileName="Assets\Scripts\AI\AIBehave.cs" Line="24" Column="87" />
+      <File FileName="Assets\Scripts\Editors\NodeEditor.cs" Line="10" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

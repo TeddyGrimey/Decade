@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AI\AIBehave.cs" />
+     <Compile Include="Assets\Scripts\AI\AIPathFinding.cs" />
      <Compile Include="Assets\Scripts\AI\Node.cs" />
+     <Compile Include="Assets\Scripts\AI\StandardAI.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CharacterControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Editors\NodeEditor.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\zoom.cs" />
