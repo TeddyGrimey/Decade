@@ -13,4 +13,19 @@ public class Node : MonoBehaviour {
 	public List<string> pathName = new List<string>();
 	public List<GameObject> pathParent = new List<GameObject>();
 
+
+	void Start(){
+		this.renderer.enabled = false;
+		this.transform.FindChild("Sphere").renderer.enabled = false;
+
+		Collider[] sphereHit = Physics.OverlapSphere (this.transform.position, 1.0F);
+
+		for(int i = 0; i<sphereHit.Length; i++){
+			if(sphereHit[i].collider.transform.gameObject.GetComponent<Node>() && !surroundingNodes.Contains(sphereHit[i].collider.transform.gameObject) && sphereHit[i].collider.transform.gameObject != this.gameObject){
+				surroundingNodes.Add(sphereHit[i].collider.gameObject);
+			
+			}
+		}
+	}
+
 }
