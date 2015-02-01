@@ -115,6 +115,11 @@ public class AIBehaveNext : MonoBehaviour {
 					}
 
 					if(amount > 0){
+
+						//audio.enabled = true;
+						this.GetComponent<Sound>().time ++;
+						this.GetComponent<Sound>().play = true;
+
 						averagePosition /= amount;
 						dir = this.transform.position - averagePosition;
 						angle = Mathf.Atan2(dir.x,dir.z) * Mathf.Rad2Deg;
@@ -130,6 +135,10 @@ public class AIBehaveNext : MonoBehaviour {
 							moveDirection += new Vector3(Mathf.Sin(angleRads)* randSpeed,-7f,Mathf.Cos(angleRads)* 0.01f); 
 							//moveDirection /= 2;
 						}
+					}
+					else{
+						//audio.enabled = false;
+						this.GetComponent<Sound>().play = false;
 					}
 
 				}
