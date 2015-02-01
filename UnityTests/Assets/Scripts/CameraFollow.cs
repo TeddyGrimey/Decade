@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour {
 	void Update () {
 
 		if(Input.GetButtonDown("Fire1")){
-			view = !view;
+			//view = !view;
 		}
 
 		if(view){
