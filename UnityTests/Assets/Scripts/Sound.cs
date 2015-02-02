@@ -4,6 +4,9 @@ using System.Collections;
 public class Sound : MonoBehaviour {
 	
 	public AudioClip sound;
+	public AudioClip sound2;
+	public AudioClip sound3;
+	public float voicePitch;
 
 	public bool play = false;
 
@@ -11,16 +14,27 @@ public class Sound : MonoBehaviour {
 	int max = 0;
 	
 	void Start() {
-
+		max = Random.Range(100, 600);
+		voicePitch = Random.Range (0.75F, 1.4F);
 	}
 
 	void Update () {
 		if(play){
-			audio.pitch = Random.Range(1.00F, 4.00F);
+			audio.pitch = voicePitch;
 			if(time > max){
-				audio.PlayOneShot(sound);	
+				int rand = Random.Range (0, 2);
+				if (rand == 0){
+					audio.PlayOneShot(sound);	
+				}
+				if (rand == 1){
+					audio.PlayOneShot(sound2);
+				}
+				if (rand == 2){
+					audio.PlayOneShot (sound3);
+				}
 				time = 0;
-				max = Random.Range(100, 300);
+				max = Random.Range(100, 600);
+			
 			}
 			time++;
 		}
