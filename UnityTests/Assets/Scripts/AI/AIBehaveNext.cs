@@ -30,7 +30,11 @@ public class AIBehaveNext : MonoBehaviour {
 	public GameObject player = null;
 	public float viewDist = 8;
 
+	private Color color;
+
 	void Start() {
+		color = new Color(Random.Range(0f,1f), Random.Range(0f,1f),Random.Range(0f,1f));
+		//transform.Find("Worker1").renderer.material.color = color;
 		player = GameObject.Find("Player");
 		rand.x = Random.Range(-0.0f, 0.0f);
 		rand.z = Random.Range(-0.0f, 0.0f);
@@ -91,11 +95,14 @@ public class AIBehaveNext : MonoBehaviour {
 				rotationDirection = Quaternion.AngleAxis(angle, Vector3.up);
 
 				if(collisionMode){
-					Collider[] surrounding = Physics.OverlapSphere (this.transform.position, 0.2F);
+					Collider[] surrounding = Physics.OverlapSphere (this.transform.position, 0.4F);
 					Vector3 averagePosition = Vector3.zero;
 					int amount = 0;;
 					for(int i = 0; i < surrounding.Length; i++){
 						if(surrounding[i] != this.collider){
+							if(surrounding[i].GetComponent<CharacterControllerScript>()){
+								this.GetComponent<Sound>().time += 10;
+							}
 							if(surrounding[i].GetComponent<AIBehaveNext>() || surrounding[i].GetComponent<CharacterControllerScript>()){
 								//Debug.DrawRay(transform.position, (surrounding[i].transform.position - transform.position).normalized, Color.grey);
 								RaycastHit hit;
@@ -117,7 +124,7 @@ public class AIBehaveNext : MonoBehaviour {
 					if(amount > 0){
 
 						//audio.enabled = true;
-						this.GetComponent<Sound>().time ++;
+						//this.GetComponent<Sound>().time ++;
 						this.GetComponent<Sound>().play = true;
 
 						averagePosition /= amount;
@@ -129,10 +136,12 @@ public class AIBehaveNext : MonoBehaviour {
 
 						angleRads = rotationDirection2.eulerAngles.y * Mathf.PI / 180;
 						float angleDif = Vector3.Angle(transform.forward, new Vector3(Mathf.Sin(angleRads)* randSpeed,-7f,Mathf.Cos(angleRads)* 0.05f));
-						if(Vector3.Distance(this.transform.position, averagePosition) < 0.2f && angleDif > 1f){
+						if(Vector3.Distance(this.transform.position, averagePosition) < 0.4f && angleDif > 1f){
 							Debug.DrawLine(this.transform.position, averagePosition, Color.magenta);
 							rotationDirection = Quaternion.Lerp(rotationDirection,rotationDirection2, 0.2f);
-							moveDirection += new Vector3(Mathf.Sin(angleRads)* randSpeed,-7f,Mathf.Cos(angleRads)* 0.01f); 
+							if(Vector3.Distance(this.transform.position, averagePosition) < 0.2f){
+								moveDirection += new Vector3(Mathf.Sin(angleRads)* randSpeed,-7f,Mathf.Cos(angleRads)* 0.1f); 
+							}
 							//moveDirection /= 2;
 						}
 					}

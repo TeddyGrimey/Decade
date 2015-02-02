@@ -23,6 +23,10 @@ public class AIPathFinding : MonoBehaviour {
 	private int timer = 0;
 	public int debugTimer = 30;
 
+	void Start () {
+		this.GetComponent<Node>().nodeName = Random.Range(1, 1000).ToString();
+ 	}
+
 	void Update () {
 
 		//Is the search completed
@@ -48,8 +52,12 @@ public class AIPathFinding : MonoBehaviour {
 			if(state == 1){
 				//Debug timer to slow down the process 
 				timer ++;
-				if(timer > debugTimer){
-					timer = 0;
+				if(timer > 100){
+					state = 2;
+					this.GetComponent<AIPathFinding>().enabled = false;
+				}
+				//if(timer > debugTimer){
+					//timer = 0;
 					//For all the nodes in the node list;
 					for(int n = 0; n < nodeList.Count; n++){
 						//For all the surrounding nodes of the nodeList[n]:
@@ -65,7 +73,7 @@ public class AIPathFinding : MonoBehaviour {
 							}
 						}
 					}
-				}
+				//}
 			}
 
 
