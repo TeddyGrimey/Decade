@@ -15,7 +15,10 @@ public class Node : MonoBehaviour {
 
 	public bool debug = true;
 
+
 	void Start(){
+
+
 		this.renderer.enabled = false;
 		this.transform.FindChild("Sphere").renderer.enabled = false;
 

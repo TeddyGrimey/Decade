@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AI\AIBehave.cs" />
      <Compile Include="Assets\Scripts\AI\AIBehaveNext.cs" />
      <Compile Include="Assets\Scripts\AI\AIPathFinding.cs" />
      <Compile Include="Assets\Scripts\AI\Node.cs" />
