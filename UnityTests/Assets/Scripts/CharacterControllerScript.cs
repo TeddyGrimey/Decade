@@ -43,8 +43,8 @@ public class CharacterControllerScript : MonoBehaviour {
 		else{
 			canvas.text = "Loading..." + (Mathf.Round(Mathf.InverseLerp(0, nodeList.Count,currentNode) * 100).ToString());
 		}
-		if(sim && simTime < 100){
-			gameSpeed = 500;
+		if(sim && simTime < 1){
+			gameSpeed = 1;
 			simTime++;
 		}
 		else{

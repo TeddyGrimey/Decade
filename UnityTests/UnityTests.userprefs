@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AI\AIBehaveNext.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterControllerScript.cs" Line="62" Column="88" />
-      <File FileName="Assets\Scripts\AI\AIBehaveNext.cs" Line="158" Column="7" />
-      <File FileName="Assets\Scripts\AI\Node.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Editors\NodeEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Sound.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AI\AIPathFinding.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI\AIBehaveNext.cs" Line="108" Column="25" />
+      <File FileName="Assets\Scripts\CharacterControllerScript.cs" Line="47" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
