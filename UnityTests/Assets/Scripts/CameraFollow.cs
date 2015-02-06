@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour {
 			this.transform.position = Vector3.Lerp(this.transform.position,new Vector3(player.transform.position.x - playerPos.x, startPosition.y, player.transform.position.z - playerPos.z), smooth);
 			this.transform.rotation = Quaternion.Lerp(this.transform.rotation,  Quaternion.Euler(startRotation), smooth);
 			this.camera.orthographicSize = Mathf.Lerp (this.camera.orthographicSize, view3D, smooth);
-			this.camera.orthographic = true;
+			//this.camera.orthographic = true;
 		}
 
 	}
