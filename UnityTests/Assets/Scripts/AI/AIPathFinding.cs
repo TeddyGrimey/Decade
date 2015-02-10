@@ -78,7 +78,7 @@ public class AIPathFinding : MonoBehaviour {
 						//timer = 0;
 						//For all the nodes in the node list;
 						for(int n = 0; n < nodeList.Count; n++){
-						//Debug.DrawLine(this.transform.position, nodeList[n].transform.position);
+						Debug.DrawLine(this.transform.position, nodeList[n].transform.position, Color.grey);
 							bool sur = false;
 							//For all the surrounding nodes of the nodeList[n]:
 							for(int s = 0; s < nodeList[n].GetComponent<Node>().surroundingNodes.Count; s++){
